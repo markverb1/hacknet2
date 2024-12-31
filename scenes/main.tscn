@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://db12aqieyole7"]
+
+[ext_resource type="PackedScene" uid="uid://dx3f123ayei5m" path="res://scenes/window.tscn" id="1_5jm7t"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" parent="." instance=ExtResource("1_5jm7t")]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 262.0
+offset_right = 848.0
+offset_bottom = 533.0
+can_close = false
+can_minimize = false
+titlebar_text = "America"
+
+[node name="Label" type="Label" parent="Window"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 35.0
+offset_right = 79.0
+offset_bottom = 58.0
+text = "Joe Biden"

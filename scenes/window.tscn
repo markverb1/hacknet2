@@ -1,0 +1,130 @@
+[gd_scene load_steps=13 format=3 uid="uid://dx3f123ayei5m"]
+
+[ext_resource type="Script" path="res://scripts/window.gd" id="1_6uccu"]
+[ext_resource type="Texture2D" uid="uid://hywnxwar34xn" path="res://assets/gui/resize.png" id="2_edp3d"]
+[ext_resource type="Texture2D" uid="uid://beog8rqno1ua6" path="res://assets/gui/close.png" id="3_xxdxm"]
+[ext_resource type="Texture2D" uid="uid://cei33pg4hwcht" path="res://assets/gui/minimize.png" id="4_3dckc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ij1e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8w40v"]
+bg_color = Color(0.25, 0.25, 0.25, 1)
+border_color = Color(0.60933, 0.60933, 0.60933, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mx2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhe8c"]
+bg_color = Color(0, 0, 0, 0.368627)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0s2x"]
+
+[sub_resource type="Theme" id="Theme_00q61"]
+Button/styles/focus = SubResource("StyleBoxEmpty_8ij1e")
+Button/styles/normal = SubResource("StyleBoxFlat_8w40v")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_4mx2s")
+Panel/styles/panel = SubResource("StyleBoxFlat_bhe8c")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_b0s2x")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdlx0"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.313726)
+shadow_offset = Vector2(4, 4)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdw4s"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[node name="Window" type="Panel"]
+offset_left = 198.0
+offset_top = 94.0
+offset_right = 529.0
+offset_bottom = 365.0
+theme = SubResource("Theme_00q61")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xdlx0")
+script = ExtResource("1_6uccu")
+
+[node name="Resize" type="TextureRect" parent="."]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_edp3d")
+
+[node name="Titlebar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mdw4s")
+
+[node name="Close" type="Button" parent="Titlebar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -16.0
+offset_right = -1.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("3_xxdxm")
+icon_alignment = 1
+
+[node name="Minimize" type="Button" parent="Titlebar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -16.0
+offset_right = -34.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("4_3dckc")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Titlebar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -11.5
+offset_right = 104.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Test Window"
+
+[connection signal="gui_input" from="Resize" to="." method="_on_resize_gui_input"]
+[connection signal="mouse_entered" from="Resize" to="." method="_on_resize_mouse_entered"]
+[connection signal="mouse_exited" from="Resize" to="." method="_on_resize_mouse_exited"]
+[connection signal="gui_input" from="Titlebar" to="." method="_on_titlebar_gui_input"]
+[connection signal="pressed" from="Titlebar/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Titlebar/Minimize" to="." method="_on_minimize_pressed"]
