@@ -17,11 +17,23 @@ config/icon="res://icon.svg"
 
 [display]
 
-mouse_cursor/custom_image="res://Posy's Cursor Black/Posy Black default-0.png"
+mouse_cursor/custom_image="res://assets/Posy's Cursor Black/Posy Black default-0.png"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/tnowe_extra_controls/plugin.cfg")
+enabled=PackedStringArray()
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "green",
+"res://assets/Posy's Cursor Black/": "purple",
+"res://assets/fonts/": "gray",
+"res://assets/gui/": "blue",
+"res://assets/icons/": "red",
+"res://scenes/": "purple",
+"res://scripts/": "blue"
+}
 
 [input]
 

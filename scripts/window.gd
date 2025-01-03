@@ -2,13 +2,31 @@ extends Panel
 
 @export var min_size:Vector2 = Vector2(200,200)
 @export var max_size:Vector2 = Vector2(600,600)
-@export var can_close:bool = true
-@export var can_minimize:bool = true
-@export var titlebar_text:String = "Test Window"
+@export var can_close:bool = true :
+	set(x):
+		can_close = x
+		_ready()
+@export var can_minimize:bool = true :
+	set(x):
+		can_minimize = x
+		_ready()
+@export var can_resize = true:
+	set(x):
+		can_resize = x
+		_ready()
+@export var titlebar_text:String = "Test Window" :
+	set(x):
+		titlebar_text = x
+		_ready()
+		
+@export var icon:Texture2D = preload("res://assets/icons/terminal_user.png"):
+	set(x):
+		icon = x
+		_ready()
 
 const defaultCursor=preload("res://assets/Posy's Cursor Black/Posy Black default-0.png")
 const resizeCursor=preload("res://assets/Posy's Cursor Black/Posy Black size NwSe-0.png")
-const minimizeButtonTexture = preload("res://assets/gui/resize.png")
+const minimizeButtonTexture = preload("res://assets/gui/minimize2.png")
 const unminimizeButtonTexture = preload("res://assets/gui/minimize.png")
 var oldSize:Vector2 = self.size
 var minimized:bool = false
@@ -17,6 +35,8 @@ func _ready() -> void:
 	$Titlebar/Close.disabled = not can_close
 	$Titlebar/Minimize.disabled = not can_minimize
 	$Titlebar/Label.text = titlebar_text
+	$Titlebar/Icon.texture = icon
+	$Resize.visible = can_resize
 
 func _on_resize_gui_input(event: InputEvent) -> void:
 	#print(event)
@@ -56,6 +76,11 @@ func _on_close_pressed() -> void:
 func _on_minimize_pressed() -> void:
 	minimized = not minimized
 	$Resize.visible = not minimized
+	self.propagate_call("set_visible", [not minimized])
+	self.visible = true
+	$Titlebar.propagate_call("set_visible", [true])
+	if not minimized:
+		$Resize.visible = can_resize
 	if minimized:
 		$Titlebar/Minimize.icon = minimizeButtonTexture
 		oldSize = self.size
