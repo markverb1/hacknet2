@@ -31,9 +31,15 @@ folder_colors={
 "res://assets/fonts/": "gray",
 "res://assets/gui/": "blue",
 "res://assets/icons/": "red",
+"res://assets/misc/": "yellow",
 "res://scenes/": "purple",
+"res://scenes/windows/": "blue",
 "res://scripts/": "blue"
 }
+
+[gui]
+
+theme/custom="res://assets/theme.tres"
 
 [input]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgek733l6g66s"
-path="res://.godot/imported/terminal_ms.png-4243d5d934624b45dc86445d30b529f0.ctex"
+uid="uid://bs65vs6jv3o8m"
+path="res://.godot/imported/kali-ferrofluid-16x9.jpg-9497c07c0ee8e46c2d09c704957c2774.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/terminal_ms.png"
-dest_files=["res://.godot/imported/terminal_ms.png-4243d5d934624b45dc86445d30b529f0.ctex"]
+source_file="res://assets/misc/kali-ferrofluid-16x9.jpg"
+dest_files=["res://.godot/imported/kali-ferrofluid-16x9.jpg-9497c07c0ee8e46c2d09c704957c2774.ctex"]
 
 [params]
 

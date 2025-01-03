@@ -37,6 +37,7 @@ func _ready() -> void:
 	$Titlebar/Label.text = titlebar_text
 	$Titlebar/Icon.texture = icon
 	$Resize.visible = can_resize
+	#self.move_child($Resize,-1)
 
 func _on_resize_gui_input(event: InputEvent) -> void:
 	#print(event)

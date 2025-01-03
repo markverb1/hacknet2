@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkjladaqw4ph2"]
+
+[ext_resource type="PackedScene" uid="uid://dx3f123ayei5m" path="res://scenes/window.tscn" id="1_n8ml1"]
+[ext_resource type="Script" path="res://scripts/testwindow.gd" id="2_c0nnd"]
+[ext_resource type="Texture2D" uid="uid://0ogfpe4c1wvg" path="res://assets/icons/terminal_user.png" id="3_1a1co"]
+[ext_resource type="Texture2D" uid="uid://cf84nh815ss5e" path="res://assets/icons/terminal.png" id="4_gombo"]
+[ext_resource type="Texture2D" uid="uid://bgek733l6g66s" path="res://assets/icons/terminal_ms.png" id="5_g6j2e"]
+
+[node name="Test Window" type="Node"]
+
+[node name="Window" parent="." instance=ExtResource("1_n8ml1")]
+offset_right = 376.0
+offset_bottom = 274.0
+min_size = Vector2(327, 216)
+
+[node name="Control" type="Control" parent="Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 36.0
+offset_right = -2.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_c0nnd")
+
+[node name="CheckBox2" type="CheckBox" parent="Window/Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 128.0
+offset_right = 109.0
+offset_bottom = 152.0
+button_pressed = true
+text = "Can Close"
+
+[node name="CheckBox" type="CheckBox" parent="Window/Control"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 100.0
+offset_right = 127.0
+offset_bottom = 124.0
+button_pressed = true
+text = "Can Minimize"
+
+[node name="LineEdit" type="LineEdit" parent="Window/Control"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 1.0
+offset_right = 316.0
+offset_bottom = 28.0
+text = "Test Window"
+placeholder_text = "Test Window"
+
+[node name="Label" type="Label" parent="Window/Control"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 25.0
+text = "Title"
+
+[node name="OptionButton" type="OptionButton" parent="Window/Control"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 35.0
+offset_right = 288.0
+offset_bottom = 67.0
+selected = 0
+item_count = 3
+popup/item_0/text = "User Terminal"
+popup/item_0/icon = ExtResource("3_1a1co")
+popup/item_1/text = "Root Terminal"
+popup/item_1/icon = ExtResource("4_gombo")
+popup/item_1/id = 1
+popup/item_2/text = "MSFConsole Terminal"
+popup/item_2/icon = ExtResource("5_g6j2e")
+popup/item_2/id = 2
+
+[node name="CheckBox3" type="CheckBox" parent="Window/Control"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 76.0
+offset_right = 139.0
+offset_bottom = 100.0
+button_pressed = true
+text = "Can Resize"
+
+[connection signal="toggled" from="Window/Control/CheckBox2" to="Window/Control" method="_on_check_box_2_toggled"]
+[connection signal="toggled" from="Window/Control/CheckBox" to="Window/Control" method="_on_check_box_toggled"]
+[connection signal="text_changed" from="Window/Control/LineEdit" to="Window/Control" method="_on_line_edit_text_changed"]
+[connection signal="item_selected" from="Window/Control/OptionButton" to="Window/Control" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Window/Control/CheckBox3" to="Window/Control" method="_on_check_box_3_toggled"]

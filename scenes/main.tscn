@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://db12aqieyole7"]
+[gd_scene load_steps=4 format=3 uid="uid://db12aqieyole7"]
 
-[ext_resource type="PackedScene" uid="uid://dx3f123ayei5m" path="res://scenes/window.tscn" id="1_5jm7t"]
-[ext_resource type="Texture2D" uid="uid://cf84nh815ss5e" path="res://assets/icons/terminal.png" id="2_804hn"]
-[ext_resource type="Script" path="res://scripts/testwindow.gd" id="3_nmr8q"]
-[ext_resource type="Texture2D" uid="uid://0ogfpe4c1wvg" path="res://assets/icons/terminal_user.png" id="4_eiipe"]
-[ext_resource type="Texture2D" uid="uid://cv7buv2ig0ngk" path="res://assets/icons/terminal_ms.png" id="5_232nw"]
+[ext_resource type="Texture2D" uid="uid://bs65vs6jv3o8m" path="res://assets/misc/kali-ferrofluid-16x9.jpg" id="1_5vwce"]
+[ext_resource type="PackedScene" uid="uid://dkjladaqw4ph2" path="res://scenes/windows/test_window.tscn" id="2_m23qc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cxp8"]
+bg_color = Color(0, 0, 0, 0.847059)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,90 +15,36 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Window" parent="." instance=ExtResource("1_5jm7t")]
-layout_mode = 0
-offset_left = 517.0
-offset_top = 262.0
-offset_right = 893.0
-offset_bottom = 536.0
-min_size = Vector2(327, 216)
-
-[node name="Control" type="Control" parent="Window"]
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -111
+texture_filter = 6
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 36.0
-offset_right = -2.0
-offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_nmr8q")
+texture = ExtResource("1_5vwce")
+expand_mode = 1
+metadata/_edit_lock_ = true
 
-[node name="CheckBox2" type="CheckBox" parent="Window/Control"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 128.0
-offset_right = 109.0
-offset_bottom = 152.0
-button_pressed = true
-text = "Can Close"
+[node name="Windows" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CheckBox" type="CheckBox" parent="Window/Control"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 100.0
-offset_right = 127.0
-offset_bottom = 124.0
-button_pressed = true
-text = "Can Minimize"
+[node name="Test Window" parent="Windows" instance=ExtResource("2_m23qc")]
 
-[node name="LineEdit" type="LineEdit" parent="Window/Control"]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 1.0
-offset_right = 316.0
-offset_bottom = 28.0
-text = "Test Window"
-placeholder_text = "Test Window"
-
-[node name="Label" type="Label" parent="Window/Control"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 42.0
-offset_bottom = 25.0
-text = "Title"
-
-[node name="OptionButton" type="OptionButton" parent="Window/Control"]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 35.0
-offset_right = 288.0
-offset_bottom = 67.0
-selected = 0
-item_count = 3
-popup/item_0/text = "User Terminal"
-popup/item_0/icon = ExtResource("4_eiipe")
-popup/item_1/text = "Root Terminal"
-popup/item_1/icon = ExtResource("2_804hn")
-popup/item_1/id = 1
-popup/item_2/text = "MSFConsole Terminal"
-popup/item_2/icon = ExtResource("5_232nw")
-popup/item_2/id = 2
-
-[node name="CheckBox3" type="CheckBox" parent="Window/Control"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 76.0
-offset_right = 139.0
-offset_bottom = 100.0
-button_pressed = true
-text = "Can Resize"
-
-[connection signal="toggled" from="Window/Control/CheckBox2" to="Window/Control" method="_on_check_box_2_toggled"]
-[connection signal="toggled" from="Window/Control/CheckBox" to="Window/Control" method="_on_check_box_toggled"]
-[connection signal="text_changed" from="Window/Control/LineEdit" to="Window/Control" method="_on_line_edit_text_changed"]
-[connection signal="item_selected" from="Window/Control/OptionButton" to="Window/Control" method="_on_option_button_item_selected"]
-[connection signal="toggled" from="Window/Control/CheckBox3" to="Window/Control" method="_on_check_box_3_toggled"]
+[node name="Taskbar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5cxp8")

@@ -1,78 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://dx3f123ayei5m"]
+[gd_scene load_steps=7 format=3 uid="uid://dx3f123ayei5m"]
 
 [ext_resource type="Script" path="res://scripts/window.gd" id="1_6uccu"]
-[ext_resource type="FontFile" uid="uid://bcw8rma87tb6y" path="res://assets/fonts/Hack-Regular.ttf" id="1_tn8w0"]
+[ext_resource type="Theme" uid="uid://cxx8qgtcrd3xf" path="res://assets/theme.tres" id="1_mn6ft"]
 [ext_resource type="Texture2D" uid="uid://hywnxwar34xn" path="res://assets/gui/resize.png" id="2_edp3d"]
 [ext_resource type="Texture2D" uid="uid://beog8rqno1ua6" path="res://assets/gui/close.png" id="3_xxdxm"]
 [ext_resource type="Texture2D" uid="uid://cei33pg4hwcht" path="res://assets/gui/minimize.png" id="4_3dckc"]
 [ext_resource type="Texture2D" uid="uid://0ogfpe4c1wvg" path="res://assets/icons/terminal_user.png" id="5_tggtt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ij1e"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8w40v"]
-bg_color = Color(0.25, 0.25, 0.25, 1)
-border_color = Color(0.60933, 0.60933, 0.60933, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15rru"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msdgl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mx2s"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ub060"]
-bg_color = Color(0.14, 0.14, 0.14, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhe8c"]
-bg_color = Color(0, 0, 0, 0.368627)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0s2x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyt6w"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybj5m"]
-bg_color = Color(0.141176, 0.141176, 0.141176, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="Theme" id="Theme_00q61"]
-Button/styles/focus = SubResource("StyleBoxEmpty_8ij1e")
-Button/styles/normal = SubResource("StyleBoxFlat_8w40v")
-CheckBox/styles/normal = SubResource("StyleBoxEmpty_15rru")
-CheckButton/styles/normal = SubResource("StyleBoxEmpty_msdgl")
-LineEdit/fonts/font = ExtResource("1_tn8w0")
-LineEdit/styles/focus = SubResource("StyleBoxEmpty_4mx2s")
-LineEdit/styles/normal = SubResource("StyleBoxFlat_ub060")
-Panel/styles/panel = SubResource("StyleBoxFlat_bhe8c")
-TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_b0s2x")
-TextEdit/fonts/font = ExtResource("1_tn8w0")
-TextEdit/styles/focus = SubResource("StyleBoxEmpty_iyt6w")
-TextEdit/styles/normal = SubResource("StyleBoxFlat_ybj5m")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdw4s"]
-bg_color = Color(0.158472, 0.158472, 0.158472, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-
 [node name="Window" type="Panel"]
-offset_left = 197.0
-offset_top = 94.0
-offset_right = 528.0
-offset_bottom = 365.0
-theme = SubResource("Theme_00q61")
+offset_right = 331.0
+offset_bottom = 271.0
+theme = ExtResource("1_mn6ft")
 script = ExtResource("1_6uccu")
 
 [node name="Titlebar" type="Panel" parent="."]
@@ -82,9 +20,11 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 34.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_mdw4s")
+theme = ExtResource("1_mn6ft")
+theme_type_variation = &"PanelOpaque"
 
 [node name="Close" type="Button" parent="Titlebar"]
+texture_filter = 6
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -101,6 +41,7 @@ icon = ExtResource("3_xxdxm")
 icon_alignment = 1
 
 [node name="Minimize" type="Button" parent="Titlebar"]
+texture_filter = 6
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -129,7 +70,7 @@ grow_vertical = 2
 text = "Test Window"
 
 [node name="Icon" type="TextureRect" parent="Titlebar"]
-texture_filter = 3
+texture_filter = 6
 layout_mode = 0
 offset_left = 3.0
 offset_top = 1.0
