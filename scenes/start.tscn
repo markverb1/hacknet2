@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dic6sls40cln3"]
+
+[ext_resource type="Texture2D" uid="uid://dt182va8uaj0s" path="res://assets/misc/tiBLUVk.png" id="1_jfm2k"]
+[ext_resource type="PackedScene" uid="uid://gu3nlvs6s0fx" path="res://scenes/windows/machine_config.tscn" id="2_4q6nr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jfm2k")
+expand_mode = 1
+
+[node name="Machine Configuration" parent="." instance=ExtResource("2_4q6nr")]
+offset_left = 315.0
+offset_top = 174.0
+offset_right = 355.0
+offset_bottom = 214.0

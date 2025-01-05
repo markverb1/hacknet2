@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0p2gvgg18x0f"]
+
+[ext_resource type="PackedScene" uid="uid://dx3f123ayei5m" path="res://scenes/window.tscn" id="1_ix7vs"]
+
+[node name="Terminal Emulator" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Window" parent="." instance=ExtResource("1_ix7vs")]
+layout_mode = 0
+offset_right = 581.0
+offset_bottom = 477.0
+max_size = Vector2(100000, 100000)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme_type_variation = &"MonoTextLabel"
+bbcode_enabled = true
+text = "[color=#FFFFFF]                                                           
+  +-------------------------------------------------------+
+  |  METASPLOIT by Rapid7                                 |
+  +---------------------------+---------------------------+
+  |      [/color][color=#0080FF]__________________[/color][color=#FFFFFF]   |         [/color][color=#00FF00]   [/color][color=#FFFFFF]               |
+  |  [/color][color=#FF8000]==[/color][color=#0080FF]c(______([/color][color=#FF8000]o[/color][color=#0080FF](______(_[/color][color=#FF8000]()[/color][color=#FFFFFF]  | [/color][color=#00FF00]|\"\"\"\"\"\"\"\"\"\"\"\"|======[[/color][color=#FF0000]*** [/color][color=#FFFFFF] |
+  |    [/color][color=#0080FF]    [/color][color=#FFFFFF]    [/color][color=#0080FF] )[/color][color=#FF8000]=[/color][color=#0080FF]\\[/color][color=#FFFFFF]     [/color][color=#0080FF]  [/color][color=#FFFFFF]    | [/color][color=#00FF00]|[/color][color=#FFFFFF]  EXPLOIT   [/color][color=#00FF00]\\[/color][color=#FFFFFF]            |
+  |            [/color][color=#0080FF]//[/color][color=#FFFFFF] [/color][color=#0080FF]\\\\[/color][color=#FFFFFF]          |[/color][color=#00FF00] |_____________\\_______ [/color][color=#FFFFFF]   |
+  |           [/color][color=#0080FF]//[/color][color=#FFFFFF]   [/color][color=#0080FF]\\\\[/color][color=#FFFFFF]         | [/color][color=#00FF00]|==[[/color][color=#FFFFFF]msf >[/color][color=#00FF00]]============\\ [/color][color=#FFFFFF]  |
+  |         [/color][color=#0080FF] //[/color][color=#FFFFFF]     [/color][color=#0080FF]\\\\ [/color][color=#FFFFFF]       | [/color][color=#00FF00]|______________________\\[/color][color=#FFFFFF]  |
+  |         [/color][color=#0080FF]//[/color][color=#FFFFFF] RECON [/color][color=#0080FF]\\\\ [/color][color=#FFFFFF]      |[/color][color=#808080] \\[/color][color=#00FF00](@)(@)(@)(@)(@)(@)(@)[/color][color=#808080]/[/color][color=#00FF00] [/color][color=#FFFFFF]  |
+  |        [/color][color=#0080FF]//[/color][color=#FFFFFF]         [/color][color=#0080FF]\\\\ [/color][color=#FFFFFF]     | [/color][color=#808080] ********************* [/color][color=#FFFFFF]   |
+  +---------------------------+---------------------------+
+  |     [/color][color=#808080] o O o [/color][color=#FFFFFF]               |       [/color][color=#FFBF00] \\'\\/\\/\\/'/ [/color][color=#FFFFFF]        |
+  |           [/color][color=#808080]   o O  [/color][color=#FFFFFF]        |        [/color][color=#FFBF00] )======(  [/color][color=#FFFFFF]        |
+  | [/color][color=#FF0000] [/color][color=#FFFFFF]     [/color][color=#FF0000]  [/color][color=#FFFFFF]        [/color][color=#808080]o [/color][color=#FFFFFF]        |       [/color][color=#FFBF00].' [/color][color=#FFFFFF] LOOT [/color][color=#FFBF00] '. [/color][color=#FFFFFF]       |
+  | [/color][color=#FF0000]|^^^^^^^^^^^^^^|l___  [/color][color=#FFFFFF]    |     [/color][color=#FFBF00] /  [/color][color=#00FF00]  _||__  [/color][color=#FFBF00] \\ [/color][color=#FFFFFF]      |
+  | [/color][color=#FF0000]|[/color][color=#FFFFFF]    PAYLOAD    [/color][color=#FF0000] |[/color][color=#FFFFFF]\"\"[/color][color=#66D9FF]\\[/color][color=#FF0000]___,[/color][color=#FFFFFF] |    [/color][color=#FFBF00] / [/color][color=#FFFFFF]  [/color][color=#00FF00] (_||_ [/color][color=#FFFFFF]   [/color][color=#FFBF00] \\[/color][color=#FFFFFF]      |
+  | [/color][color=#FF0000]|________________|__|)__|[/color][color=#FFFFFF] |    [/color][color=#FFBF00]| [/color][color=#FFFFFF]   [/color][color=#00FF00] __||_)[/color][color=#FFFFFF]     [/color][color=#FFBF00]|[/color][color=#FFFFFF]     |
+  | [/color][color=#FF0000]|(@)(@)\"\"\"**|(@)(@)**|(@) [/color][color=#FFFFFF]|    [/color][color=#FFBF00]\"  [/color][color=#FFFFFF]   [/color][color=#00FF00]  || [/color][color=#FFFFFF]     [/color][color=#FFBF00] \" [/color][color=#FFFFFF]    |
+  |  [/color][color=#FF8000]= = = = = = = = = = = =[/color][color=#FFFFFF]  |     [/color][color=#FFBF00]'--------------'[/color][color=#FFFFFF]      |
+  +---------------------------+---------------------------+
+[/color]"
+selection_enabled = true
+
+[node name="Panel" type="Panel" parent="Window"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -36.0
+offset_right = -24.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"PanelOpaque"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window/Panel/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"MonoTextLabel"
+bbcode_enabled = true
+text = "[color=#008C00]┌──([/color][color=#6666FF]markverb1[/color][color=#66B2FF]@[/color][color=#6666FF]kali[/color][color=#008C00])-[[/color][color=#FFFFFF]~[/color][color=#008C00]][/color][color=#3399FF]  [/color][color=#FFFFFF]                                   
+[/color][color=#008C00]└[/color][color=#6666FF]$[/color][color=#000000]                                                          
+[/color]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="LineEdit" type="LineEdit" parent="Window/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -21.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+flat = true

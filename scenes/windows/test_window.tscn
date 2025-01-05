@@ -6,9 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://cf84nh815ss5e" path="res://assets/icons/terminal.png" id="4_gombo"]
 [ext_resource type="Texture2D" uid="uid://bgek733l6g66s" path="res://assets/icons/terminal_ms.png" id="5_g6j2e"]
 
-[node name="Test Window" type="Node"]
+[node name="Test Window" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Window" parent="." instance=ExtResource("1_n8ml1")]
+layout_mode = 0
 offset_right = 376.0
 offset_bottom = 274.0
 min_size = Vector2(327, 216)

@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://gu3nlvs6s0fx"]
+
+[ext_resource type="Script" path="res://scripts/machine_config.gd" id="1_57l5a"]
+[ext_resource type="PackedScene" uid="uid://dx3f123ayei5m" path="res://scenes/window.tscn" id="1_rsf2b"]
+[ext_resource type="Texture2D" uid="uid://ubfry8m5qb5k" path="res://assets/icons/wrench.png" id="2_hyowo"]
+
+[node name="Machine Configuration" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_57l5a")
+
+[node name="Window" parent="." instance=ExtResource("1_rsf2b")]
+layout_mode = 0
+offset_right = 551.0
+offset_bottom = 349.0
+can_close = false
+can_resize = false
+titlebar_text = "Machine Configuration"
+icon = ExtResource("2_hyowo")
+
+[node name="ItemList" type="ItemList" parent="Window"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 61.0
+offset_right = 194.0
+offset_bottom = 307.0
+item_count = 1
+
+[node name="Label" type="Label" parent="Window"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 38.0
+offset_right = 130.0
+offset_bottom = 61.0
+text = "Select machine"
+
+[node name="StartGame" type="Button" parent="Window"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 312.0
+offset_right = 125.0
+offset_bottom = 343.0
+text = "Start Game"
+
+[node name="RM" type="Button" parent="Window"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 312.0
+offset_right = 193.0
+offset_bottom = 343.0
+disabled = true
+text = "RM"
+
+[node name="NewMachine" type="Button" parent="Window"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 183.0
+offset_right = 398.0
+offset_bottom = 206.0
+text = "Create new machine"
+
+[node name="Hostname" type="LineEdit" parent="Window"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 62.0
+offset_right = 539.0
+offset_bottom = 89.0
+placeholder_text = "Hostname..."
+
+[node name="Username" type="LineEdit" parent="Window"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 92.0
+offset_right = 539.0
+offset_bottom = 119.0
+placeholder_text = "Username..."
+
+[node name="Password" type="LineEdit" parent="Window"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 122.0
+offset_right = 539.0
+offset_bottom = 149.0
+placeholder_text = "Password..."
+secret = true
+
+[node name="Password2" type="LineEdit" parent="Window"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 152.0
+offset_right = 539.0
+offset_bottom = 179.0
+placeholder_text = "Confirm password..."
+secret = true
+
+[node name="Label2" type="Label" parent="Window"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 39.0
+offset_right = 347.0
+offset_bottom = 62.0
+text = "Create machine"
+
+[node name="CheckBox" type="CheckBox" parent="Window"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 312.0
+offset_right = 359.0
+offset_bottom = 336.0
+text = "Danger"
+
+[connection signal="pressed" from="Window/NewMachine" to="." method="_on_new_machine_pressed"]
+[connection signal="toggled" from="Window/CheckBox" to="." method="_on_danger_toggled"]

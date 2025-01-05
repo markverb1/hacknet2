@@ -1,7 +1,10 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://cxx8qgtcrd3xf"]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://cxx8qgtcrd3xf"]
 
 [ext_resource type="FontFile" uid="uid://bcw8rma87tb6y" path="res://assets/fonts/Hack-Regular.ttf" id="1_cucq4"]
+[ext_resource type="FontFile" uid="uid://biu6diymrbv3y" path="res://assets/fonts/Hack-Bold.ttf" id="2_m44rn"]
 [ext_resource type="StyleBox" uid="uid://hsxxsn7l71m3" path="res://assets/opaque.tres" id="2_qnlqe"]
+[ext_resource type="FontFile" uid="uid://05dp7n4vutbc" path="res://assets/fonts/Hack-BoldItalic.ttf" id="3_exgvj"]
+[ext_resource type="FontFile" uid="uid://bjfmcgwfltoh3" path="res://assets/fonts/Hack-Italic.ttf" id="4_djlh2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ij1e"]
 
@@ -36,6 +39,8 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onts1"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0s2x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyt6w"]
@@ -47,6 +52,8 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6k5j"]
+
 [resource]
 Button/styles/focus = SubResource("StyleBoxEmpty_8ij1e")
 Button/styles/hover = SubResource("StyleBoxFlat_uiffe")
@@ -56,10 +63,24 @@ CheckButton/styles/normal = SubResource("StyleBoxEmpty_msdgl")
 LineEdit/fonts/font = ExtResource("1_cucq4")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_4mx2s")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_ub060")
+MonoTextLabel/base_type = &"RichTextLabel"
+MonoTextLabel/font_sizes/bold_font_size = 12
+MonoTextLabel/font_sizes/bold_italics_font_size = 12
+MonoTextLabel/font_sizes/italics_font_size = 12
+MonoTextLabel/font_sizes/mono_font_size = 12
+MonoTextLabel/font_sizes/normal_font_size = 12
+MonoTextLabel/fonts/bold_font = ExtResource("2_m44rn")
+MonoTextLabel/fonts/bold_italics_font = ExtResource("3_exgvj")
+MonoTextLabel/fonts/italics_font = ExtResource("4_djlh2")
+MonoTextLabel/fonts/mono_font = ExtResource("1_cucq4")
+MonoTextLabel/fonts/normal_font = ExtResource("1_cucq4")
 Panel/styles/panel = SubResource("StyleBoxFlat_bhe8c")
 PanelOpaque/base_type = &"Panel"
 PanelOpaque/styles/panel = ExtResource("2_qnlqe")
+RichTextLabel/colors/selection_color = Color(0.117647, 0.313726, 0.501961, 0.886275)
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_onts1")
 TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_b0s2x")
 TextEdit/fonts/font = ExtResource("1_cucq4")
 TextEdit/styles/focus = SubResource("StyleBoxEmpty_iyt6w")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_ybj5m")
+Tree/styles/focus = SubResource("StyleBoxEmpty_k6k5j")

@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx3f123ayei5m"]
+[gd_scene load_steps=8 format=3 uid="uid://c8dop4hvlg2p1"]
 
-[ext_resource type="Script" path="res://scripts/window.gd" id="1_6uccu"]
-[ext_resource type="Theme" uid="uid://cxx8qgtcrd3xf" path="res://assets/theme.tres" id="1_mn6ft"]
-[ext_resource type="Texture2D" uid="uid://hywnxwar34xn" path="res://assets/gui/resize.png" id="2_edp3d"]
-[ext_resource type="Texture2D" uid="uid://beog8rqno1ua6" path="res://assets/gui/close.png" id="3_xxdxm"]
-[ext_resource type="Texture2D" uid="uid://cei33pg4hwcht" path="res://assets/gui/minimize.png" id="4_3dckc"]
-[ext_resource type="Texture2D" uid="uid://0ogfpe4c1wvg" path="res://assets/icons/terminal_user.png" id="5_tggtt"]
+[ext_resource type="Theme" uid="uid://cxx8qgtcrd3xf" path="res://assets/theme.tres" id="1_f8qbw"]
+[ext_resource type="Script" path="res://scripts/window.gd" id="2_mkeai"]
+[ext_resource type="Texture2D" uid="uid://beog8rqno1ua6" path="res://assets/gui/close.png" id="3_bni8a"]
+[ext_resource type="Texture2D" uid="uid://cei33pg4hwcht" path="res://assets/gui/minimize.png" id="4_6n0s1"]
+[ext_resource type="Texture2D" uid="uid://0ogfpe4c1wvg" path="res://assets/icons/terminal_user.png" id="5_m117o"]
+[ext_resource type="Texture2D" uid="uid://hywnxwar34xn" path="res://assets/gui/resize.png" id="6_nrgy1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2nj3"]
 bg_color = Color(0.158472, 0.158472, 0.158472, 1)
@@ -15,8 +15,8 @@ corner_radius_top_right = 4
 [node name="Window" type="Panel"]
 offset_right = 331.0
 offset_bottom = 271.0
-theme = ExtResource("1_mn6ft")
-script = ExtResource("1_6uccu")
+theme = ExtResource("1_f8qbw")
+script = ExtResource("2_mkeai")
 
 [node name="Titlebar" type="Panel" parent="."]
 clip_contents = true
@@ -25,7 +25,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 34.0
 grow_horizontal = 2
-theme = ExtResource("1_mn6ft")
+theme = ExtResource("1_f8qbw")
 theme_type_variation = &"PanelOpaque"
 theme_override_styles/panel = SubResource("StyleBoxFlat_v2nj3")
 
@@ -43,7 +43,7 @@ offset_right = -1.0
 offset_bottom = 16.0
 grow_horizontal = 0
 grow_vertical = 2
-icon = ExtResource("3_xxdxm")
+icon = ExtResource("3_bni8a")
 icon_alignment = 1
 
 [node name="Minimize" type="Button" parent="Titlebar"]
@@ -60,7 +60,7 @@ offset_right = -34.0
 offset_bottom = 16.0
 grow_horizontal = 0
 grow_vertical = 2
-icon = ExtResource("4_3dckc")
+icon = ExtResource("4_6n0s1")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="Titlebar"]
@@ -82,7 +82,7 @@ offset_left = 3.0
 offset_top = 1.0
 offset_right = 35.0
 offset_bottom = 33.0
-texture = ExtResource("5_tggtt")
+texture = ExtResource("5_m117o")
 expand_mode = 1
 
 [node name="Resize" type="TextureRect" parent="."]
@@ -97,7 +97,7 @@ offset_left = -20.0
 offset_top = -20.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("2_edp3d")
+texture = ExtResource("6_nrgy1")
 
 [connection signal="gui_input" from="Titlebar" to="." method="_on_titlebar_gui_input"]
 [connection signal="pressed" from="Titlebar/Close" to="." method="_on_close_pressed"]
