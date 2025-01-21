@@ -47,9 +47,12 @@ func _on_resize_gui_input(event: InputEvent) -> void:
 		#print("hell")
 		Input.set_custom_mouse_cursor(resizeCursor)
 		self.size += event.relative
-		self.size.x = clamp(self.size.x,min_size.x,max_size.x)
-		self.size.y = clamp(self.size.y,min_size.y,max_size.y)
-	
+		if max_size.x > 0:
+			self.size.x = clamp(self.size.x,min_size.x,max_size.x)
+		if max_size.y > 0:
+			self.size.y = clamp(self.size.y,min_size.y,max_size.y)
+		self.size.x = clamp(self.size.x,min_size.x,DisplayServer.window_get_size().x)
+		self.size.y = clamp(self.size.y,min_size.y,DisplayServer.window_get_size().y)
 	if Input.is_action_just_released("lmb"):
 		Input.set_custom_mouse_cursor(defaultCursor)
 
@@ -91,5 +94,5 @@ func _on_minimize_pressed() -> void:
 		self.size = oldSize
 
 func _process(_delta:float) -> void:
-	self.position.x = clamp(self.position.x,0,get_viewport().size.x-self.size.x)
-	self.position.y = clamp(self.position.y,0,get_viewport().size.y-self.size.y)
+	self.position.x = clamp(self.position.x,0,DisplayServer.window_get_size().x-self.size.x)
+	self.position.y = clamp(self.position.y,0,DisplayServer.window_get_size().y-self.size.y)

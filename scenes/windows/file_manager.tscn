@@ -64,6 +64,7 @@ alignment = 2
 max_length = 1
 
 [node name="owner" type="LineEdit" parent="Window/Perms"]
+layout_mode = 0
 offset_left = 235.0
 offset_top = 2.0
 offset_right = 351.0
@@ -71,6 +72,7 @@ offset_bottom = 29.0
 placeholder_text = "root"
 
 [node name="group" type="LineEdit" parent="Window/Perms"]
+layout_mode = 0
 offset_left = 235.0
 offset_top = 32.0
 offset_right = 351.0

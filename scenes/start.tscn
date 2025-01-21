@@ -22,7 +22,4 @@ texture = ExtResource("1_jfm2k")
 expand_mode = 1
 
 [node name="Machine Configuration" parent="." instance=ExtResource("2_4q6nr")]
-offset_left = 315.0
-offset_top = 174.0
-offset_right = 355.0
-offset_bottom = 214.0
+layout_mode = 1
